@@ -1,0 +1,8 @@
+# Runtime dependencies for the Growth Experimentation Agent.
+# Bounded (>=X,<Y) to avoid silent breaking changes across major versions.
+pandas>=2.0,<3.0
+scipy>=1.11,<2.0
+anthropic>=0.40,<1.0
+# numpy is imported directly by main.py (np.sqrt/np.clip), so it is a direct
+# dependency, not just a transitive one via pandas/scipy.
+numpy>=1.24,<3.0

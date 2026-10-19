@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "growth-experimentation-agent"
+version = "1.0.0"
+description = "Autonomous Experimentation AI Agent for Growth: SRM + conversion stats fed to Claude for executive readouts."
+readme = "README.md"
+requires-python = ">=3.9"
+# As dependencias de runtime vivem em requirements.txt (fonte unica, para
+# evitar drift). `pip install .` NAO instala as deps; use:
+#   pip install -r requirements.txt
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0,<9.0",
+]
+
+[tool.setuptools]
+py-modules = ["main", "generate_mock_data"]
+
+[tool.pytest.ini_options]
+testpaths = ["."]
+python_files = ["test_*.py"]
